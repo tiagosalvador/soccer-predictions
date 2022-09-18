@@ -2,7 +2,7 @@
 
 This project is inspired by the University of Michigan's [Prediction Models with Sports Data](https://www.coursera.org/learn/prediction-models-sports-data) course offered through Coursera as part of the [Sports Performance Analytics specialization](https://www.coursera.org/specializations/sports-analytics).
 
-In the course, a forecaster of the outcomes of Premier League soccer games is built based on the [transfermarkt](https://www.transfermarkt.com/) value (TMValue) of the teams. One of the limitations stems from having a single TMValue for each team for the entire season. This value is in general updated twice every month and therefore there should be added value in using the most updated values. For this project, we will explore if that is indeed the case. Then we will use the model to simulate the rest of the 2022-2023 Premier League season.
+In the course, a forecaster for the outcomes of Premier League soccer games is built based on the [transfermarkt](https://www.transfermarkt.com/) value (TMValue) of the teams. One of the limitations of this forecaster stems from having a single TMValue for each team for the entire season. In reality this value is updated about twice every month. Incorporating these most up-to-date TMvalues could therefore improve the forecaster model. For this project, we will explore if that is indeed the case. We will then use the model to simulate the rest of the 2022-2023 Premier League season.
 
 We will use the following two data sources:
 - [football-data](https://www.football-data.co.uk/englandm.php): from here we can easily obtain basic statistics for every Premier League game and Bet365 odds.
@@ -40,7 +40,7 @@ This notebook scraps the TMValue for all teams that are currently (2022) in eith
 
 ## Second Step: Normalize Data
 
-After gathering the data, we notice that the team names are inconsistent across the different tables. While this is to be expected since we are using two different sources, the inconsistencies also appears within the transfermarkt tables. Moreover, the dates are saved as strings and their formats also inconsistent as well. We convert them all to the same format (timestamps), which also allows us to add the most update TMValues of the teams at each game as well as at the beginning of the season. All of this is accomplished in the Jupyter Notebook `Normalizing Data.ipynb`.
+After gathering the data, we notice that the team names are inconsistent across the different tables. While this is to be expected since we are using two different sources, the inconsistencies also appears within the transfermarkt tables. Moreover, the dates are saved as strings and their formats are inconsistent as well. We convert them all to the same format (timestamps), which also allows us to add the most updated TMValues of the teams at each game as well as at the beginning of the season. All of this is accomplished in the Jupyter Notebook `Normalizing Data.ipynb`.
 
 
 ## Third Step: Create Forecasting Models
@@ -49,4 +49,4 @@ We use the log of the ratio between the TMValue of each team as our predictive f
 
 ## Fourth Step: Predict the Premier League's 2022-2023 Season
 
-We use the model developed in Step 3 to forecast the remaining of the games for 2022-2023 season using the most recent TMValue for each team. As our model outputs probabilities for the outcome of each game we perform a Monte Carlo simulation to estimate, amongs other events, the probability of each team winning the Premier League. As part of this, we also need to scrap the results of the games that already took place. All of this is accomplished in the Jupyter Notebook `Predicting Premier League 22-23 Season.ipynb`.
+We use the model developed in Step 3 to forecast the remaining of the games for 2022-2023 season using the most recent TMValue for each team. As our model outputs probabilities for the outcome of each game, we perform a Monte Carlo simulation to estimate, among other events, the probability of each team winning the Premier League. As part of this, we also need to scrap the results of the games that already took place. All of this is accomplished in the Jupyter Notebook `Predicting Premier League 22-23 Season.ipynb`.
