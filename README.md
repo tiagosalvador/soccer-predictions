@@ -46,3 +46,7 @@ After gathering the data, we notice that the team names are inconsistent across 
 ## Third Step: Create Forecasting Models
 
 We use the log of the ratio between the TMValue of each team as our predictive feature. We create two models based on the TMValue at the beginning of the season as well the most updated values along the season. All of this is accomplished in the Jupyter Notebook `Predicting Soccer Games Outcomes (Baseline).ipynb`.
+
+## Fourth Step: Predict the Premier League's 2022-2023 Season
+
+We use the model developed in Step 3 to forecast the remaining of the games for 2022-2023 season using the most recent TMValue for each team. As our model outputs probabilities for the outcome of each game we perform a Monte Carlo simulation to estimate, amongs other events, the probability of each team winning the Premier League. As part of this, we also need to scrap the results of the games that already took place. All of this is accomplished in the Jupyter Notebook `Predicting Premier League 22-23 Season.ipynb`.
